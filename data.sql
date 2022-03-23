@@ -79,7 +79,7 @@ INSERT INTO animals(
   '2020-02-08',
   0,
   FALSE,
-  11
+  -11
 );
 
 INSERT INTO animals(
@@ -95,7 +95,7 @@ INSERT INTO animals(
   '2022-11-15',
   2,
   TRUE,
-  5.7
+  -5.7
 );
 
 INSERT INTO animals(
@@ -111,7 +111,7 @@ INSERT INTO animals(
   '1993-04-02',
   3,
   FALSE,
-  12.13
+  -12.13
 );
 
 INSERT INTO animals(
@@ -127,7 +127,7 @@ INSERT INTO animals(
   '2005-06-12',
   1,
   TRUE,
-  45
+  -45
 );
 
 INSERT INTO animals(
@@ -189,6 +189,9 @@ SELECT * FROM animals;
 --rollback changes made to species
 ROLLBACK;
 
+--verify that thet changes were rolledback
+SELECT * FROM animals;
+
 /* Adding the correct species */
 BEGIN;
 
@@ -206,7 +209,13 @@ BEGIN;
 
 DELETE FROM animals;
 
+-- Verify that the animnals table is empty
+SELECT * FROM animals;
+
 ROLLBACK;
+
+--verify that thet changes were rolledback
+SELECT * FROM animals;
 
 -- savepoint
 BEGIN;
