@@ -196,10 +196,10 @@ UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 
 UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
 
-COMMIT TRANSACTION;
+COMMIT;
 
 --Verify that change was made and persists after commit.
-SELECT name, species FROM animals
+SELECT * FROM animals;
 
 /* Deleting all animals */
 BEGIN;
@@ -207,3 +207,18 @@ BEGIN;
 DELETE FROM animals;
 
 ROLLBACK;
+
+-- savepoint
+BEGIN;
+
+DELETE FROM animals WHERE date_of_birth > 'Jan 1, 2022';
+
+SAVEPOINT save_point;
+
+UPDATE animals SET weight_kg = weight_kg * -1;
+
+ROLLBACK TO save_point;
+
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+
+COMMIT;
