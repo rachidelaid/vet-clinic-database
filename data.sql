@@ -178,10 +178,7 @@ INSERT INTO animals(
   22
 );
 
-
-/* Start a transaction and update the animals 
-   table by setting the species column to unspecified.
-*/
+/* Setting the species to unspecified*/
 BEGIN; -- start transaction
 
 UPDATE animals SET species = 'unspecified';
@@ -192,3 +189,21 @@ SELECT * FROM animals;
 --rollback changes made to species
 ROLLBACK;
 
+/* Adding the correct species */
+BEGIN;
+
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+
+COMMIT TRANSACTION;
+
+--Verify that change was made and persists after commit.
+SELECT name, species FROM animals
+
+/* Deleting all animals */
+BEGIN;
+
+DELETE FROM animals;
+
+ROLLBACK;
