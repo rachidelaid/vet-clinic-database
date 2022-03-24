@@ -231,3 +231,58 @@ ROLLBACK TO save_point;
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 
 COMMIT;
+
+-- Insert data into the owners table
+INSERT INTO owners(
+  full_name,
+  age
+) VALUES(
+  'Sam Smith',
+  34
+);
+
+INSERT INTO owners(
+  full_name,
+  age
+) VALUES(
+  'Jennifer Orwell',
+  19
+);
+
+INSERT INTO owners(
+  full_name,
+  age
+) VALUES(
+  'Bob',
+  45
+);
+
+INSERT INTO owners(
+  full_name,
+  age
+) VALUES(
+  'Melody Pond',
+  77
+);
+
+INSERT INTO owners(
+  full_name,
+  age
+) VALUES(
+  'Dean Winchester',
+  14
+);
+
+INSERT INTO owners(
+  full_name,
+  age
+) VALUES(
+  'Jodie Whittaker',
+  38
+);
+
+-- Insert data into the species table
+INSERT INTO species(name) VALUES ('Pokemon');
+INSERT INTO species(name) VALUES ('Digimon');
+
+-- Modify inserted animals so it includes the species_id value
