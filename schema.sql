@@ -5,7 +5,7 @@ CREATE TABLE animals (
     date_of_birth DATE NOT NULL, 
     escape_attempts INT NOT NULL,
     neutered BOOLEAN NOT NULL,
-    weight_kg DECIMAL NOT NULL.
+    weight_kg DECIMAL NOT NULL
 );
 
 /* Add a column species of type string to the animals table */
@@ -16,13 +16,13 @@ ALTER TABLE animals
 CREATE TABLE owners (
     id SERIAL PRIMARY KEY NOT NULL, 
     full_name VARCHAR(100) NOT NULL, 
-    age INT NOT NULL,
+    age INT NOT NULL
 );
 
 --species table
 CREATE TABLE species (
     id SERIAL PRIMARY KEY NOT NULL, 
-    name VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL
 );
 
 -- Remove column species
