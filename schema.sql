@@ -19,6 +19,8 @@ CREATE TABLE owners (
     age INT NOT NULL
 );
 
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
 --species table
 CREATE TABLE species (
     id SERIAL PRIMARY KEY NOT NULL, 
