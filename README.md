@@ -1,6 +1,7 @@
 # Vet Clinic Database
 
 ![screenshot](./screenshot.png)
+![diagram](./vet-clinic-schema.png)
 
 ## Getting Started
 
